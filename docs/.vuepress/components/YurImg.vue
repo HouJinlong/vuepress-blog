@@ -16,7 +16,7 @@
             alt: {
                 type: String,
                 required: false,
-                default: '凉风有信',
+                default: '亦·周',
             },
         },
         data() {

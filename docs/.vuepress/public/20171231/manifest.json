@@ -1,12 +1,12 @@
 {
   "lang": "zh-CN",
-  "name": "凉风有信",
-  "short_name": "凉风有信",
+  "name": "亦·周",
+  "short_name": "亦·周",
   "start_url": "/index.html",
   "display": "standalone",
   "theme_color": "#3c67bd",
   "background_color": "#3c67bd",
-  "description": "凉风有信的一个技术博客 APP",
+  "description": "亦·周的一个技术博客 APP",
   "icons": [
     {
       "src": "homeScreen48.png",
@@ -37,8 +37,8 @@
   "related_applications": [
     {
       "platform": "web",
-      "url": "https://gleehub.com",
-      "id": "com.gleehub.cnguu"
+      "url": "https://houjinlong.github.io",
+      "id": "houjinlong.github.io"
     }
   ]
 }
