@@ -63,6 +63,115 @@ banner: http://ww1.sinaimg.cn/large/006I5hBxly1gaexm283ooj30dw0bkmyc.jpg
 
 > 到此docker的安装已完成
 
+## docker 命令
+
+docker
+
+### 基础命令
+
+| 命令         | 作用         |
+| -------------- | -------------- |
+| docker version | 查看版本   |
+| docker --help  | 帮助         |
+| docker info    | 显示Docker信息 |
+
+### 镜像命令
+
+#### 列出本地主机上的镜像
+
+```bash
+docker images
+```
+同一仓库源可以有多个 TAG，代表这个仓库源的不同个版
+
+参数：
+
+- `docker images -a` 列出本地所有的镜像（包括中间映像层）
+- `docker images -q` 只显示镜像ID
+- `docker images --digests` 显示镜像的摘要信息
+- `docker images --no-trunc` 显示完整的镜像信息
+
+| REPOSITORY       | TAG        | IMAGE ID | CREATED      | VIRTUAL SIZE |
+| ---------------- | ---------- | -------- | ------------ | ------------ |
+| 表示镜像的仓库源 | 镜像的标签 | 镜像ID | 镜像创建时间 | 镜像大小 |
+
+#### 从Docker Hub查找镜像
+
+```bash
+docker search 镜像名
+```
+
+参数：
+
+- `docker search --automated 镜像名` 只列出 automated build类型的镜像
+- `docker search --no-trunc 镜像名`  显示完整的镜像描述
+- `docker search -s 20 镜像名`  列出收藏数不小于指定值的镜像
+
+| NAME       | DESCRIPTION     | STARS   | OFFICIAL |  AUTOMATED |
+| ---------------- | ---------- | -------- | ------------ | ------------ |
+| 镜像仓库源的名称 | 镜像的描述 | 收藏数 | 否docker官方发布 | 是否automated build类型的镜像 |
+
+#### 下载镜像
+
+```bash
+docker pull 镜像名 
+# 等价于
+docker pull 镜像名:latest
+```
+
+#### 删除镜像
+
+```bash
+docker rmi 镜像名
+
+# 强制删除
+docker rmi -f 镜像名
+
+# 删除多个
+docker rmi -f 镜像名1:TAG 镜像名2:TAG
+
+# 删除全部
+docker rmi -f $(docker images -qa)
+```
+
+### 容器命令
+
+#### 新建并启动容器
+
+`docker run` 当本地不存在 `IMAGE` 镜像时会 先下载 后运行
+
+```bash
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+```
+
+options说明:
+
+  - `--name="容器新名字"`：为容器指定一个名称
+  - `-d`：后台运行容器，并返回容器ID，即启动守护式容器
+  - `-i`：以交互模式运行容器,允许你对容器内的标准输入 (STDIN) 进行交互。配合-t使用
+  - `-t`：为容器重新分配一个伪输入终端 配合-i使用
+  - `-P`：指定端口映射
+
+***
+
+实例:
+
+```bash
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

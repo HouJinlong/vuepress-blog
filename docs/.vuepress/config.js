@@ -33,11 +33,16 @@ module.exports = {
         ityped:true,
         authorLink: 'https://github.com/HouJinlong/',
         logo: '/20171231/logo.png',
-        // banner: '/20171231/banner.png',
-        
+        banner: '/20171231/banner.gif',
+        password: 'lblp82nlf', 
+        curtain: {
+            tip: '页面准备中...',   // 提示语
+            textShadow: '#e91e63', // 文字阴影颜色
+        },
         //导航栏
         nav: [
             { text: '编程', link: '/program/' },
+            { text: '工具', link: '/tools/' },
             { text: '其它', link: '/other/' },
         ],
         
