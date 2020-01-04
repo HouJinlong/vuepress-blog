@@ -33,7 +33,9 @@ banner: http://ww1.sinaimg.cn/large/006I5hBxly1gaexm283ooj30dw0bkmyc.jpg
 - 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中(小白可以直接下别人的应用包)
 - 容器是完全使用沙箱机制，相互之间不会有任何接口(不会互相影响，对我这种小白友好)
 
-## Docker
+## 安装
+
+### docker
 
 [菜鸟教程-CentOS Docker 安装](https://www.runoob.com/docker/centos-docker-install.html)
 
@@ -45,7 +47,7 @@ banner: http://ww1.sinaimg.cn/large/006I5hBxly1gaexm283ooj30dw0bkmyc.jpg
     # 测试命令
     docker -v
 ```
-## Docker-Compose
+### Docker-Compose
 
 传统的`Docker`，一个容器需要一个`Dockerfile`来描述，如果说一个项目比较大，用到了较多的技术，就会有很多个容器，如果需要挨个执行 `Dockerfile`，甚至启动的时候也是挨个去启动，开发会累死，运维也会累死。`Docker-Compose`解决了这个问题，为每个项目提供一个描述文件，并且批处理项目中的所有容器。
 
@@ -63,11 +65,7 @@ banner: http://ww1.sinaimg.cn/large/006I5hBxly1gaexm283ooj30dw0bkmyc.jpg
 
 > 到此docker的安装已完成
 
-## docker 命令
-
-docker
-
-### 基础命令
+## docker基础命令
 
 | 命令         | 作用         |
 | -------------- | -------------- |
@@ -75,9 +73,9 @@ docker
 | docker --help  | 帮助         |
 | docker info    | 显示Docker信息 |
 
-### 镜像命令
+## 镜像命令
 
-#### 列出本地主机上的镜像
+### 列出本地主机上的镜像
 
 ```bash
 docker images
@@ -95,7 +93,7 @@ docker images
 | ---------------- | ---------- | -------- | ------------ | ------------ |
 | 表示镜像的仓库源 | 镜像的标签 | 镜像ID | 镜像创建时间 | 镜像大小 |
 
-#### 从Docker Hub查找镜像
+### 从Docker Hub查找镜像
 
 ```bash
 docker search 镜像名
@@ -111,7 +109,7 @@ docker search 镜像名
 | ---------------- | ---------- | -------- | ------------ | ------------ |
 | 镜像仓库源的名称 | 镜像的描述 | 收藏数 | 否docker官方发布 | 是否automated build类型的镜像 |
 
-#### 下载镜像
+### 下载镜像
 
 ```bash
 docker pull 镜像名 
@@ -119,7 +117,7 @@ docker pull 镜像名
 docker pull 镜像名:latest
 ```
 
-#### 删除镜像
+### 删除镜像
 
 ```bash
 docker rmi 镜像名
@@ -134,9 +132,11 @@ docker rmi -f 镜像名1:TAG 镜像名2:TAG
 docker rmi -f $(docker images -qa)
 ```
 
-### 容器命令
+## 容器命令
 
-#### 新建并启动容器
+[菜鸟教程](https://www.runoob.com/docker/docker-container-usage.html)
+
+### 新建并启动容器
 
 `docker run` 当本地不存在 `IMAGE` 镜像时会 先下载 后运行
 
@@ -157,9 +157,133 @@ options说明:
 实例:
 
 ```bash
+# 以下命令使用 ubuntu 镜像启动一个容器，参数为以命令行模式进入该容器
+docker run -it ubuntu /bin/bash
+# 要退出终端，直接输入 exit
+```
+参数说明：
+- `-i`: 交互式操作。
+- `-t`: 终端。
+- `ubuntu`: ubuntu 镜像。
+- `/bin/bash`：放在镜像名后的是命令，这里我们希望有个交互式 Shell，因此用的是 /bin/bash。
 
+### 列出容器
+
+```bash
+docker ps [options]
 ```
 
+options，参数说明：
+
+- `docker ps -l` 显示最近创建的容器
+- `docker ps -a` 显示所有容器（默认仅显示正在运行）
+- `docker ps -n 5` 显示最近5个创建的容器
+- `docker ps -q` 只显示容器编号
+- `docker ps --no-trunc` 不截断输出
+
+### 退出容器
+
+```bash
+# 容器停止退出
+exit
+
+# 容器不停止退出
+ctrl+P+Q
+```
+
+### 启动容器
+
+```bash
+docker start 容器名/容器id
+```
+
+### 重启容器
+
+```bash
+docker restart 容器名/容器id
+```
+
+### 停止容器
+
+```bash
+docker stop 容器名/容器id
+```
+
+### 强制停止容器
+
+```bash
+docker kill 容器名/容器id
+```
+### 删除已停止的容器
+
+```bash
+docker rm 容器id
+
+# 一次性删除多个容器
+docker rm -f $(docker ps -a -q)
+docker ps -a -q | xargs docker rm
+```
+### 查看容器日志
+
+```bash
+docker logs -f -t --tail 容器id
+```
+
+参数说明:
+
+- `-t`：加入时间戳
+- `-f`：跟随最新的日志打印
+- `--tail`: 数字：显示最后多少条
+
+### 查看容器内运行的进程
+
+```bash
+docker top 容器id
+```
+
+
+### 查看容器内部细节
+
+```bash
+docker inspect 容器id
+```
+
+### 进入正在运行的容器并以命令行交互
+
+```bash
+# exec 在容器中打开新的终端，并且可以启动新的进程
+docker exec -it 容器id bash  
+
+# 或
+
+# attach 直接进入容器启动命令的终端，不会启动新的进程
+docker attach 容器id
+```
+
+### 从容器和主机直接互相 拷贝文件
+
+容器路径加前缀 ` 容器id:`
+
+```bash
+# 拷贝容器文件到 主机
+docker cp 容器id:容器内路径 目的主机路径
+
+# 拷贝主机文件到 容器
+docker cp 目的主机路径 容器id:容器内路径 
+```
+
+### 从容器创建一个新的镜像
+
+```bash
+docker commit [OPTIONS] 容器id 目标镜像名:[标签名]
+```
+
+常用选项:
+
+- `-a` :提交的镜像作者；
+- `-c` :使用Dockerfile指令来创建镜像；
+- `-m` :提交时的说明文字；
+- `-p` :在commit时，将容器暂停。
 
 
 

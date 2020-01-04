@@ -1,12 +1,12 @@
 ---
 
-title: Linux 基础命令
+title: Linux 命令
 
 meta:
 
   - name: description
 
-    content: Linux 基础命令
+    content: Linux 命令
 
   - name: keywords
 
@@ -14,7 +14,7 @@ meta:
 
 date: 2019-12-28
 
-update_date: 2020-01-02
+update_date: 2020-01-04
  
 tags: 
 
@@ -25,7 +25,7 @@ tags:
 banner: http://ww1.sinaimg.cn/large/006I5hBxly1gafon462ipj30u00ifq3v.jpg
 ---
 
-作为一个开发人员，我深刻认是到应该扎实一下`Linux 基础命令`,毕竟图形用户界面 (GUI)是给普通用户用的，高手都是命令行！一开始作为小白决定 命令行一点没有GUI方便，但是现在 emmmmmmmmmmmm 真香！
+作为一个开发人员，我深刻认是到应该扎实一下`Linux 基础命令`,毕竟图形用户界面 (GUI)是给普通用户用的，高手都是命令行！一开始作为小白决定 命令行一点没有GUI方便，但是现在 emmmmmmmmmmmm 真香！ 只总结了部分，过于基础的忽略了
 
 ## yum:仓库
 
@@ -103,30 +103,18 @@ find path -name filename
 2. 查找当前目录下所有js文件 `find . -name "*.js"`
 3. 查找当前目录下文件夹中有-log的文件夹 `find . -name "*-log"`
 
-## mv：移动文件
-`mv` 命令将文件或目录从一个位置移动到另一个位置。
-
-```bash
-mv somefile /to/some/other/path
-```
-
-## rm：删除文件/目录
-
-`rm`命令用于删除一个文件或者目录。
-
-```bash
-rm [选项] someFile
-```
-选项：
-- `-i` 删除前逐一询问确认。
-- `-f` 即使原档案属性设为唯读，亦直接删除，无需逐一确认。
-- `-r` 将目录及以下之档案亦逐一删除。
-
 ## tree：以树状图列出目录的内容
 
 常在写文档时需要列一下文件目录结构，这个时候`tree`命令就能帮个忙了。如果没有`tree`命令便可用`yum`安装
 ```bash
 yum install tree -y
+```
+## xargs: 给命令传递参数的过滤器
+
+xargs 一般是和管道一起使用,[ xargs 命令-菜鸟教程](https://www.runoob.com/linux/linux-comm-xargs.html)
+
+```bash
+somecommand |xargs -item  command
 ```
 
 ## | ：管道命令
@@ -171,6 +159,26 @@ echo $?
   ```bash
   echo "Hello World" | cat > hello.txt
   ```
+
+## chmod: 修改文件权限
+
+故事的开始，都会先留一个悬念。
+
+只有程序员能懂的冷笑话系列中，有个比较经典的段子：
+
+请用最简洁的语言描述我国FL。
+
+754。
+
+所以，754是什么意思呢？754是什么意思呢？754是什么意思呢？
+
+```
+chmod [option]  文件或目录
+```
+
+
+
+
 ![undefined](http://ww1.sinaimg.cn/large/006I5hBxly1gaie11bc1hj31ao2as7ss.jpg)
 
 

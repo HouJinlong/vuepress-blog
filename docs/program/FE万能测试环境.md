@@ -24,7 +24,7 @@ tags:
 
   - linux
 
-banner: https://ws1.sinaimg.cn/mw690/006I5hBxly1g9imki2aw9j31hc0u014a.jpg
+banner: http://ww1.sinaimg.cn/mw690/006I5hBxly1g9imki2aw9j31hc0u014a.jpg
 ---
 
 ## 万能测试环境

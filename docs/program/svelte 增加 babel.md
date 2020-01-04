@@ -24,7 +24,7 @@ tags:
 
   - package.json
 
-banner: https://ws1.sinaimg.cn/mw690/006I5hBxly1g9imki2aw9j31hc0u014a.jpg
+banner: http://ww1.sinaimg.cn/mw690/006I5hBxly1g9imki2aw9j31hc0u014a.jpg
 ---
 
 
@@ -68,10 +68,10 @@ if (config) {
 	...
 ```
 重新构建，查看输出
-[![https://ws1.sinaimg.cn/large/006I5hBxly1g9ijldxkrcj313409t0vd.jpg](https://ws1.sinaimg.cn/large/006I5hBxly1g9ijldxkrcj313409t0vd.jpg "https://ws1.sinaimg.cn/large/006I5hBxly1g9ijldxkrcj313409t0vd.jpg")](https://ws1.sinaimg.cn/large/006I5hBxly1g9ijldxkrcj313409t0vd.jpg "https://ws1.sinaimg.cn/large/006I5hBxly1g9ijldxkrcj313409t0vd.jpg")
+[![http://ww1.sinaimg.cn/large/006I5hBxly1g9ijldxkrcj313409t0vd.jpg](http://ww1.sinaimg.cn/large/006I5hBxly1g9ijldxkrcj313409t0vd.jpg "http://ww1.sinaimg.cn/large/006I5hBxly1g9ijldxkrcj313409t0vd.jpg")](http://ww1.sinaimg.cn/large/006I5hBxly1g9ijldxkrcj313409t0vd.jpg "http://ww1.sinaimg.cn/large/006I5hBxly1g9ijldxkrcj313409t0vd.jpg")
 
 项目文件有，`node_modules`里的没有，我好像明白什么，打开[babel网站果然有说到 希望编译 node_modules 目录下的模块要用 babel.config.js ](https://www.babeljs.cn/docs/configuration "babel网站")
 
 增加 `babel.config.js` 重新构建，虽然`.babelrc` 可能没有 但是 `babel.config.js`是全部都有的，且是同一份
 
-[![https://ws1.sinaimg.cn/large/006I5hBxly1g9ijuy9z5cj30z2094acm.jpg](https://ws1.sinaimg.cn/large/006I5hBxly1g9ijuy9z5cj30z2094acm.jpg "https://ws1.sinaimg.cn/large/006I5hBxly1g9ijuy9z5cj30z2094acm.jpg")](https://ws1.sinaimg.cn/large/006I5hBxly1g9ijuy9z5cj30z2094acm.jpg "https://ws1.sinaimg.cn/large/006I5hBxly1g9ijuy9z5cj30z2094acm.jpg")
+[![http://ww1.sinaimg.cn/large/006I5hBxly1g9ijuy9z5cj30z2094acm.jpg](http://ww1.sinaimg.cn/large/006I5hBxly1g9ijuy9z5cj30z2094acm.jpg "http://ww1.sinaimg.cn/large/006I5hBxly1g9ijuy9z5cj30z2094acm.jpg")](http://ww1.sinaimg.cn/large/006I5hBxly1g9ijuy9z5cj30z2094acm.jpg "http://ww1.sinaimg.cn/large/006I5hBxly1g9ijuy9z5cj30z2094acm.jpg")
