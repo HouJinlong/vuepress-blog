@@ -45,6 +45,5 @@ git add .
 git commit -m "$time"
 
 git push
-
 # 结束
-cd -
+echo 'done'
