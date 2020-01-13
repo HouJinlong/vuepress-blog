@@ -91,7 +91,7 @@ banner: http://ww1.sinaimg.cn/large/006I5hBxly1gaeps07le3j310m0gnmy3.jpg
 
 ## sh脚本
 
-[upload_to_ftp.sh/上传脚本](lftp.md)
+[upload_to_ftp.sh/上传脚本](/tools/lftp.md)
 
 ```bash
 #!/bin/sh
