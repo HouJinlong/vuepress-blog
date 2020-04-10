@@ -285,6 +285,17 @@ docker commit [OPTIONS] 容器id 目标镜像名:[标签名]
 - `-m` :提交时的说明文字；
 - `-p` :在commit时，将容器暂停。
 
+## docker 问题
+
+### docker 启动失败
+
+今天在公司打算实践一下docker部署ftp,写完 `docker-compose.yml` 运行，错误提示docker未运行，但是运行 `sudo systemctl start docker` 报错
+
+![start_docker_log](https://cdn.jsdelivr.net/gh/HouJinlong/pic@master/2020-04-10/start_docker_log.png)
+
+最后网上看了一大堆解决办法，各种方法尝试 都没有用，最后才发现 是我之前 改了一下 `/etc/docker/daemon.json` 用vim编辑的，写错了，所以....
+
+
 
 
 
