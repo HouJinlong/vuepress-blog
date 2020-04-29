@@ -14,7 +14,7 @@ meta:
 
 date: 2020-01-02
 
-update_date: 2019-01-02
+update_date: 2019-04-26
  
 tags: 
 
@@ -34,5 +34,11 @@ banner: http://ww1.sinaimg.cn/large/006I5hBxly1gaibig0gh4j31hc0u0n50.jpg
 在编写调试`Node.js`项目，修改代码后，需要频繁的手动close掉，然后再重新启动，非常繁琐。现在，我们可以使用这俩个工具监听代码文件的变动，当代码改变之后，自动重启。
 
 [GitHub - nodemon](https://github.com/remy/nodemon)       [GitHub - supervisor](https://github.com/petruisfan/node-supervisor)
+
+## nodemon +  supervisor
+
+HTTP, HTTP2, HTTPS, Websocket debugging proxy [https://wproxy.org/](https://wproxy.org/)
+
+[GitHub - whistle](https://github.com/avwo/whistle)      
 
 

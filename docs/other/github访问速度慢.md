@@ -38,11 +38,12 @@ mac/linux系统的hosts文件的位置如下：/etc/hosts
 
 ## 2. 增加http://github.global.ssl.fastly.net和http://github.com的映射
 
-```
 获取Github相关网站的ip
-访问 [https://www.ipaddress.com]()，拉下来，找到页面中下方的“IP Address,Domain or Hostname”
+访问 [https://www.ipaddress.com](https://www.ipaddress.com)，拉下来，找到页面中下方的“IP Address,Domain or Hostname” 
 分别输入github.global.ssl.fastly.net和github.com，查询ip地址
+
 下面是我的配置
+```
 140.82.112.4 github.com
 199.232.69.194 github.global.ssl.fastly.net
 ```
